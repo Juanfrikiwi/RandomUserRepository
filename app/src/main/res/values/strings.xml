@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">RandomUser</string>
+    <string name="contacts">CONTACTOS</string>
+    <string name="loading">CARGANDO</string>
+    <string name="name_and_surname">Nombre y apellidos</string>
+    <string name="email">Email</string>
+    <string name="gender">Género</string>
+    <string name="registration_date">Fecha de registro</string>
+    <string name="phone">Teléfono</string>
+    <string name="address">Dirección</string>
+    <string name="search_by_email">Buscar por email</string>
+    <string name="search_user">Buscar usuario</string>
+    <string name="man">Hombre</string>
+    <string name="woman">Mujer</string>
+    <string name="insert_name">Introduzca un nombre</string>
+    <string name="insert_email">Introduzca un email</string>
+    <string name="search_by_name_surname_email">Busque por nombre, apellidos o email</string>
+    <string name="get_users">Recuperar usuarios</string>
+    <string name="title_start_state">¿Cuantos usuarios desea recuperar?</string>
+    <string name="subtitle_start_state">Introduzca un número entre 1 y 5000</string>
+    <string name="try_again">Volver a intentarlo</string>
+    <string name="error_get_data_server">Error al recuperar los datos del servidor</string>
+    <string name="back">Volver</string>
+</resources>
