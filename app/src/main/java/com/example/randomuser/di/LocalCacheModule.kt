@@ -6,15 +6,20 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
+import java.util.concurrent.ConcurrentHashMap
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object ApplicationModule {
-    @Provides
+class LocalCacheModule {
+
     @Singleton
-    fun provideMainDispatcher(): CoroutineDispatcher = Dispatchers.IO
+    @Provides
+    fun provideDataCache(): MutableMap<String, Any> = ConcurrentHashMap<String, Any>()
+
+    @Singleton
+    @Provides
+    fun provideLocalCache(localCache: LocalCacheImpl): LocalCache = localCache
+
 
 }
