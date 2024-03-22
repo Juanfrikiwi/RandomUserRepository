@@ -14,4 +14,6 @@ object ApplicationModule {
     @Provides
     @Singleton
     fun provideMainDispatcher(): CoroutineDispatcher = Dispatchers.IO
+
+    
 }

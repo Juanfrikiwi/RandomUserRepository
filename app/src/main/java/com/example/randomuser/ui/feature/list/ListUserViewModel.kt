@@ -1,6 +1,5 @@
 package com.example.randomuser.ui.feature.list
 
-import android.util.Log
 import androidx.lifecycle.viewModelScope
 import com.example.randomuser.domain.usecase.GetUsersUseCase
 import com.example.randomuser.utils.ComposeViewModel
@@ -18,10 +17,12 @@ class ListUserViewModel @Inject constructor(
         intent.receive<UiIntent, UiIntent.GetUserIntent> {
             uiState = UiState.LoadingState
             viewModelScope.launch {
-                val usersList = getUsersUseCase(numUsers = it.numUsers)?.body()
-                uiState = if (usersList == null) {
-                    UiState.GetUserErrorState
-                } else UiState.GetUserSuccessfulState(usersList)
+                getUsersUseCase(numUsers = it.numUsers).collect{
+                    uiState = if (it == null) {
+                        UiState.GetUserErrorState
+                    } else UiState.GetUserSuccessfulState(it.body())
+                }
+
             }
         }
     }
